@@ -84,3 +84,7 @@ cmake_install.cmake
 *.sdf
 *.VC.db
 *.VC.VC.opendb
+
+*.sln
+*.vcxproj
+*.vcxproj.filters
