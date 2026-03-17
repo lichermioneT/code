@@ -3,6 +3,21 @@
 using namespace std;
 enum color{Red, Black};
 
+template <class T1, class T2>
+struct pair
+{
+	typedef T1 first_type;
+	typedef T2 second_type;
+	T1 first;
+	T2 second;
+	pair() : first(T1()), second(T2())
+	{
+	}
+
+	pair(const T1& a, const T2& b) : first(a), second(b)
+	{
+	}
+};
 // 红黑树的Node
 template<class K, class V>
 struct RBTreeNode

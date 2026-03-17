@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="仿函数.vcxproj" />
+  <Project Path="仿函数.vcxproj" Id="706d6d3f-e89d-4bff-99a5-09f690ffa7df" />
 </Solution>
