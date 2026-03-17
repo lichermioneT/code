@@ -39,3 +39,48 @@
 
 # debug information files
 *.dwo
+
+# Visual Studio 临时文件
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# 编译输出目录
+Debug/
+Release/
+x64/
+x86/
+bin/
+obj/
+
+# 中间产物
+*.ilk
+*.pdb
+*.ipch
+*.pch
+*.obj
+*.idb
+*.tlog
+*.log
+*.tmp
+
+# 可执行文件和动态库
+*.exe
+*.dll
+*.lib
+*.exp
+
+# CMake（如果你也用了）
+out/
+build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+
+# 其他常见缓存
+*.opensdf
+*.sdf
+*.VC.db
+*.VC.VC.opendb
