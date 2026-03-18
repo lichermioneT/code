@@ -1,5 +1,7 @@
-#include <iostream>
+﻿#include <iostream>
 #include <cstdlib>
+#include <windows.h>
+
 using namespace std;
 
 class A
@@ -8,11 +10,11 @@ public:
 	A(int a)
 		:_a(a)
 	{
-		cout << "A的构造函树" << endl;
+		cout << "A constructor  " << endl;
 	}
 	~A()
 	{
-		cout << "A的析构函数" << endl;
+		cout << "A deconstructor  " << endl;
 	}
 private:
 	int _a;
@@ -53,10 +55,28 @@ void test2()
 void test3()
 {
 	A* p = (A*)malloc(sizeof(A));
+	free(p);
+	A* p1 = new A(10);
+	delete p1;
 }
+
+// 4.operator new 和 operator delete
+// c++new和delete是操作符，c++的全局重载函数 operator new 和 operator delete
+// new和delete调用全局函数 operator重载
+// new和delete底层都是通过c语言的函数实现的，加上了异常。
+
+// 5.new和delete
+// 1.内置类型基本上一样的，new/delete是单个元素，new[]/delete[]是连续空间的,new失败抛出异常。malloc返回null.
+// 2.自定义类型
+// a.new 1.调用operator new,2.会执行对象的构造函数
+//   delete1.执行对象的析构函数，2.operator delete函数释放空间
+// b.new[N] 1.调用operator new[] 初始化N个对象，2.构造函数
+//   delete[N] 1.析构 2.释放空间
+
 
 int main()
 {
+
 	test3();
 
 
