@@ -65,16 +65,113 @@ private:
 
 // 7取地址及const取地址操作符重载
 
+void Test1()
+{
+    cout << "========== Test1: 构造和打印 ==========" << endl;
+    date d1(2024, 3, 18);
+    d1.print();
 
+    date d2(2024, 2, 29);   // 闰年合法
+    d2.print();
+
+    // date d3(2023, 2, 29); // 非法日期，打开这行可以测试构造失败
+}
+
+void Test2()
+{
+    cout << "========== Test2: 加天数 ==========" << endl;
+    date d1(2024, 3, 18);
+
+    date d2 = d1 + 20;
+    d2.print();   // 2024-4-7
+
+    d1 += 365;
+    d1.print();
+}
+
+void Test3()
+{
+    cout << "========== Test3: 减天数 ==========" << endl;
+    date d1(2024, 3, 1);
+
+    date d2 = d1 - 1;
+    d2.print();   // 2024-2-29
+
+    d1 -= 31;
+    d1.print();
+}
+
+void Test4()
+{
+    cout << "========== Test4: 前置/后置 ++ -- ==========" << endl;
+    date d1(2024, 12, 31);
+
+    cout << "原值: ";
+    d1.print();
+
+    cout << "前置++: ";
+    (++d1).print();   // 2025-1-1
+
+    cout << "后置++返回旧值: ";
+    (d1++).print();   // 2025-1-1
+
+    cout << "自增后当前值: ";
+    d1.print();       // 2025-1-2
+
+    cout << "前置--: ";
+    (--d1).print();   // 2025-1-1
+
+    cout << "后置--返回旧值: ";
+    (d1--).print();   // 2025-1-1
+
+    cout << "自减后当前值: ";
+    d1.print();       // 2024-12-31
+}
+
+void Test5()
+{
+    cout << "========== Test5: 日期比较 ==========" << endl;
+    date d1(2024, 3, 18);
+    date d2(2024, 3, 20);
+
+    cout << (d1 < d2) << endl;   // 1
+    cout << (d1 > d2) << endl;   // 0
+    cout << (d1 == d2) << endl;  // 0
+    cout << (d1 != d2) << endl;  // 1
+}
+
+void Test6()
+{
+    cout << "========== Test6: 两个日期相减 ==========" << endl;
+    date d1(2024, 3, 18);
+    date d2(2024, 3, 20);
+    date d3(2025, 3, 18);
+
+    cout << "d2 - d1 = " << d2 - d1 << endl; // 2
+    cout << "d1 - d2 = " << d1 - d2 << endl; // -2
+    cout << "d3 - d1 = " << d3 - d1 << endl; // 366，2024是闰年
+}
 
 
 int main()
 {
-    date d1;
-    date d2(1, 3, 4);
-    d1 = d2;
+    Test1();
+    cout << endl;
 
-    date d3(d1);
+    Test2();
+    cout << endl;
+
+    Test3();
+    cout << endl;
+
+    Test4();
+    cout << endl;
+
+    Test5();
+    cout << endl;
+
+    Test6();
+    cout << endl;
 
     return 0;
 }
