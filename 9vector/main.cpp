@@ -152,7 +152,6 @@ public:
 	}
 
 public:
-
 	iterator begin() { return _start; }
 	iterator end() { return _start + size(); }
 	const_iterator cbegin() const { return _start; }
